@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Employee } from '../../models/employee';
+import { EmployeeService } from '../employee.service';
+import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-employee-form',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './employee-form.component.html',
   styleUrl: './employee-form.component.css'
 })
@@ -20,10 +23,21 @@ export class EmployeeFormComponent {
     position: ''
   }
 
-  onSubmit(): void {
-    console.log(this.employee)
+  errorMessage: string = ""
 
-    //logic to create a new employee
+  constructor(private employeeService: EmployeeService, private router: Router) { }
+
+  onSubmit(): void {
+    this.employeeService.createEmployee(this.employee)
+      .subscribe({
+        next: (response) => {
+          this.router.navigate(['/'])
+
+        }, error: (err) => {
+          console.error(err)
+          this.errorMessage = 'Error:'
+        }
+      })
   }
 
 }
