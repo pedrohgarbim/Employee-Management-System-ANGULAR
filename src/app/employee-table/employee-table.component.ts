@@ -33,6 +33,10 @@ export class EmployeeTableComponent implements OnInit {
 
       }
     })
+  }
+
+  editEmployee(id: number): void {
+    this.router.navigate(['/edit', id])
 
   }
 }

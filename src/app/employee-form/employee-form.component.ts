@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './employee-form.component.html',
   styleUrl: './employee-form.component.css'
 })
-export class EmployeeFormComponent {
+export class EmployeeFormComponent implements OnInit {
 
   employee: Employee = {
     id: 0,
@@ -23,6 +23,8 @@ export class EmployeeFormComponent {
     position: ''
   }
 
+  isEditing: boolean = false
+
   errorMessage: string = ""
 
   constructor(
@@ -30,6 +32,22 @@ export class EmployeeFormComponent {
     private router: Router,
     private route: ActivatedRoute
   ) { }
+
+  ngOnInit(): void {
+    this.route.paramMap.subscribe((result) => {
+
+      const id = result.get('id')
+
+      if (id) {
+        // editing employee
+        this.isEditing = true
+        console.log("Is editing")
+      } else {
+        // create a new employee
+        console.log("Is creating")
+      }
+    })
+  }
 
   onSubmit(): void {
     // creating
