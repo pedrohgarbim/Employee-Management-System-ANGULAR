@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Employee } from '../../models/employee';
 import { EmployeeService } from '../employee.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -25,19 +25,24 @@ export class EmployeeFormComponent {
 
   errorMessage: string = ""
 
-  constructor(private employeeService: EmployeeService, private router: Router) { }
+  constructor(
+    private employeeService: EmployeeService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) { }
 
   onSubmit(): void {
+    // creating
     this.employeeService.createEmployee(this.employee)
       .subscribe({
-        next: (response) => {
-          this.router.navigate(['/'])
-
-        }, error: (err) => {
-          console.error(err)
-          this.errorMessage = 'Error:'
+        next: () => {
+          this.router.navigate(['/']);
+        },
+        error: (err) => {
+          console.error(err);
+          this.errorMessage = `Error occured during creating (${err.status})`;
         }
-      })
+      });
   }
 
 }
