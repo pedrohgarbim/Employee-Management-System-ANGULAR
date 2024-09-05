@@ -41,6 +41,13 @@ export class EmployeeFormComponent implements OnInit {
       if (id) {
         // editing employee
         this.isEditing = true
+
+        this.employeeService.getEmployeeById(Number(id)).subscribe({
+          next: (result) => this.employee = result,
+          error: (err) => {
+            this.errorMessage = `Error occured, Id not found (${err.status})`;
+          }
+        })
         console.log("Is editing")
       } else {
         // create a new employee
@@ -50,17 +57,34 @@ export class EmployeeFormComponent implements OnInit {
   }
 
   onSubmit(): void {
-    // creating
-    this.employeeService.createEmployee(this.employee)
-      .subscribe({
-        next: () => {
-          this.router.navigate(['/']);
-        },
-        error: (err) => {
-          console.error(err);
-          this.errorMessage = `Error occured during creating (${err.status})`;
-        }
-      });
-  }
 
+    if (this.isEditing) {
+      // editing
+
+      this.employeeService.editEmployee(this.employee)
+        .subscribe({
+          next: () => {
+            this.router.navigate(['/']);
+          },
+          error: (err) => {
+            console.error(err);
+            this.errorMessage = `Error occured during updating (${err.status})`;
+          }
+        });
+
+    } else {
+      // creating
+
+      this.employeeService.createEmployee(this.employee)
+        .subscribe({
+          next: () => {
+            this.router.navigate(['/']);
+          },
+          error: (err) => {
+            console.error(err);
+            this.errorMessage = `Error occured during creating (${err.status})`;
+          }
+        });
+    }
+  }
 }
