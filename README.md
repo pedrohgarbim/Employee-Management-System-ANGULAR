@@ -38,39 +38,32 @@ Serviços: Inclui o employee.service.ts, que lida com chamadas de API para opera
 
 Roteamento: Configurado para navegação contínua entre as diferentes seções do app.
 ## Como Executar
-Clone esse repositório e o do back end que está acima:
+### 1. 
+Clone o repositório:
 
-### bash
-git clone https://github.com/seuusuario/employee-management.git
+git clone (link do projeto)
 
-
-
+### 2.
 Navegue até o diretório do projeto:
 
-### bash
-Copiar código
 cd employee-management
+### 3.
 Instale as dependências:
 
-bash
-Copiar código
 npm install
+### 4.
 Inicie o servidor de desenvolvimento:
 
-bash
-Copiar código
-ng serve
-Abra o navegador e acesse http://localhost:4200/.
-
-Tecnologias Utilizadas
+ng serve 
+## ecnologias Utilizadas
 Angular para o front-end
+
 TypeScript para a lógica
+
 CSS para a estilização
-API de Backend para o gerenciamento de dados (especificar se é Node.js, ASP.NET, etc.)
-Validações & Estilização
+
+API de Backend para o gerenciamento de dados ASP.NET
+## Validações & Estilização
 O formulário inclui validações para campos obrigatórios, como nome, sobrenome, telefone, e-mail e cargo. Mensagens de erro personalizadas orientam os usuários quando um campo está vazio ou preenchido incorretamente. A aplicação é estilizada para garantir uma aparência moderna e limpa, oferecendo uma ótima experiência de usuário em diferentes dispositivos.
 
-Melhorias Futuras
-Adicionar controle de acesso baseado em papéis para diferentes tipos de usuários (por exemplo, Admin, Gerente).
-Implementar opções avançadas de busca e filtro para funcionários.
-Melhorar o desempenho da lista de funcionários com paginação.
+## O projeto:
