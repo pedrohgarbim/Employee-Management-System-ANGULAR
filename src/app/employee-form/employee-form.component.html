@@ -13,7 +13,7 @@
       [(ngModel)]="employee.firstName" />
 
     <div *ngIf="firstName.invalid && (firstName.touched || firstName.dirty)">
-      <div class="text-danger" *ngIf="firstName.errors?.['required']">First Name is required.</div>
+      <div class="text-danger" *ngIf="firstName.errors?.['required']">"First Name" is required.</div>
     </div>
 
   </div>
@@ -24,7 +24,7 @@
       [(ngModel)]="employee.lastName" />
 
     <div *ngIf="lastName.invalid && (lastName.touched || lastName.dirty)">
-      <div class="text-danger" *ngIf="lastName.errors?.['required']">Last Name is required.</div>
+      <div class="text-danger" *ngIf="lastName.errors?.['required']">"Last Name" is required.</div>
     </div>
 
   </div>
@@ -34,7 +34,7 @@
     <input required #phone="ngModel" class="form-control" type="phone" name="phone" [(ngModel)]="employee.phone" />
 
     <div *ngIf="phone.invalid && (phone.touched || phone.dirty)">
-      <div class="text-danger" *ngIf="phone.errors?.['required']">Phone is required.</div>
+      <div class="text-danger" *ngIf="phone.errors?.['required']">"Phone" is required.</div>
     </div>
 
   </div>
@@ -45,8 +45,8 @@
       [(ngModel)]="employee.email" />
 
     <div *ngIf="email.invalid && (email.touched || email.dirty)">
-      <div class="text-danger" *ngIf="email.errors?.['required']">Email is required.</div>
-      <div class="text-danger" *ngIf="email.errors?.['email']">Email is invalid.</div>
+      <div class="text-danger" *ngIf="email.errors?.['required']">"Email" is required.</div>
+      <div class="text-danger" *ngIf="email.errors?.['email']">The Email created is invalid.</div>
     </div>
   </div>
 
@@ -56,7 +56,7 @@
       [(ngModel)]="employee.position" />
 
     <div *ngIf="position.invalid && (position.touched || position.dirty)">
-      <div class="text-danger" *ngIf="position.errors?.['required']">Position is required.</div>
+      <div class="text-danger" *ngIf="position.errors?.['required']">"Position" is required.</div>
     </div>
   </div>
 
