@@ -55,7 +55,7 @@ npm install
 Inicie o servidor de desenvolvimento:
 
 ng serve 
-## ecnologias Utilizadas
+## Tecnologias Utilizadas
 Angular para o front-end
 
 TypeScript para a lógica
@@ -67,3 +67,15 @@ API de Backend para o gerenciamento de dados ASP.NET
 O formulário inclui validações para campos obrigatórios, como nome, sobrenome, telefone, e-mail e cargo. Mensagens de erro personalizadas orientam os usuários quando um campo está vazio ou preenchido incorretamente. A aplicação é estilizada para garantir uma aparência moderna e limpa, oferecendo uma ótima experiência de usuário em diferentes dispositivos.
 
 ## O projeto:
+## Home/Tela cheia
+![image](https://github.com/user-attachments/assets/aac7db83-21df-410b-bd1d-f33e559c3c6b)
+## Home/Tela divida
+![image](https://github.com/user-attachments/assets/6f2e3096-b6f2-4688-8109-04f5700aacd0)
+## Criação/Tela cheia
+![image](https://github.com/user-attachments/assets/bfbb28cd-6830-4711-86d3-a6f8c0f54111)
+## Criação/Tela divida
+![image](https://github.com/user-attachments/assets/c337d54b-4257-4ea7-978b-60f69b258963)
+
+
+
+
